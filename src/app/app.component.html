@@ -1,0 +1,23 @@
+ <div *ngIf="http.registerResponse" class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong>{{http.registerResponse}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="registerResponse()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> 
+
+<div *ngIf="http.loanResponse" class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong>{{http.loanResponse}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="loanResponse()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> 
+
+<img src="assets/logo.png" style="margin: 20px 0px 20px 20px" class="img-fluid" alt="Responsive image">
+<mat-tab-group>
+  <mat-tab label="Customer sign up"> <register></register></mat-tab>
+  <mat-tab label="Credit request and approval"> <request></request> </mat-tab>
+</mat-tab-group>
+
+<div class="footer-copyright text-center py-3">© 2018 Copyright - Accenture Test:
+  <a href="#"> Developer - Ever Cabarcas Mallarino</a>
+</div>	

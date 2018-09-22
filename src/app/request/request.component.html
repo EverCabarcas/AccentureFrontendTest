@@ -1,0 +1,54 @@
+<div fxLayout="row" fxLayoutAlign="center start" style="padding: 30px 0px 30px 0px">
+  <mat-card  fxFlex='50%' class="box">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+     <mat-card-content fxLayout="column" fxLayoutGap='15px'> 
+      <div>
+        <mat-form-field appearance="legacy"  fxFlex='100%'>
+          <mat-label>Company name</mat-label>
+          <input type="text" matInput placeholder="" formControlName="name" required>
+          <mat-error *ngIf="form.get('name')">{{getErrorMessage('name')}}</mat-error>
+          <mat-icon matPrefix>work</mat-icon>
+          <span matPrefix>&nbsp;</span>
+          <!-- <mat-hint>Company name where you came from</mat-hint> -->
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="legacy" fxFlex='100%'>
+          <mat-label>NIT</mat-label>
+          <input type="number" matInput placeholder="" formControlName="nit" required>
+          <mat-error *ngIf="form.get('nit')">{{getErrorMessage('nit')}}</mat-error>
+          <mat-icon matPrefix>credit_card</mat-icon>
+          <span matPrefix>&nbsp;</span>
+          <!-- <mat-hint>Company ID</mat-hint> -->
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="legacy" fxFlex='100%'>
+          <mat-label>Salary</mat-label>
+          <input type="number" matInput placeholder="" formControlName="salary" required>
+          <mat-error *ngIf="form.get('salary')">{{getErrorMessage('salary')}}</mat-error>
+          <mat-icon matPrefix>attach_money</mat-icon>
+          <span matPrefix>&nbsp;</span>
+          <!-- <mat-hint>Customer current salary</mat-hint> -->
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="legacy" fxFlex='100%'>
+          <mat-label>Hiring date</mat-label>
+          <input type="date" matInput placeholder="" formControlName="hiring" required>
+          <mat-error *ngIf="form.get('hiring')">{{getErrorMessage('hiring')}}</mat-error>
+          <mat-icon matPrefix>calendar_today</mat-icon>
+          <span matPrefix>&nbsp;</span>
+          <!-- <mat-hint>Customer hiring date</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <div class="row no-gutters justify-content-end">
+        <button type="submit" class="btn">Send</button>
+      </div>
+    </mat-card-content>
+  </form>
+</mat-card>
+</div>

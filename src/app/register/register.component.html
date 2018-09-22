@@ -1,0 +1,57 @@
+<div fxLayout="row" fxLayoutAlign="center start" style="padding: 30px 0px 30px 0px">
+  <mat-card  fxFlex='50%' class="box">
+      <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <mat-card-content fxLayout="column" fxLayoutGap='15px'> 
+        <div>
+          <mat-form-field appearance="legacy" fxFlex='100%'>
+            <mat-label>ID</mat-label>
+            <input type="number" matInput placeholder="" formControlName="id" required>
+            <mat-error *ngIf="form.get('id')">{{getErrorMessage('id')}}</mat-error>
+            <mat-icon matPrefix>person</mat-icon>
+            <span matPrefix>&nbsp;</span>
+            <!--  <mat-hint>Customer ID card number</mat-hint> -->
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="legacy" fxFlex='100%'>
+            <mat-label>Name</mat-label>
+            <input type="text" matInput placeholder="" formControlName="name" required>
+            <mat-error *ngIf="form.get('name')">{{getErrorMessage('name')}}</mat-error>
+            <mat-icon matPrefix>chrome_reader_mode</mat-icon>
+            <span matPrefix>&nbsp;</span>
+            <!--  <mat-hint>Customer name</mat-hint> -->
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="legacy" fxFlex='100%'>
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput placeholder="" formControlName="lastName" required>
+            <mat-error *ngIf="form.get('lastName')">{{getErrorMessage('lastName')}}</mat-error>
+            <mat-icon matPrefix>chrome_reader_mode</mat-icon>
+            <span matPrefix>&nbsp;</span>
+            <!-- <mat-hint>Customer last name</mat-hint> -->
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="legacy" fxFlex='100%'>
+            <mat-label>Birthdate</mat-label>
+            <input type="date" matInput placeholder="" formControlName="birthdate" required>
+            <mat-error *ngIf="form.get('birthdate')">{{getErrorMessage('birthdate')}}</mat-error>
+            <mat-icon matPrefix>cake</mat-icon>
+            <span matPrefix>&nbsp;</span>
+            <!-- <mat-hint>Customer birthdate</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div class="row no-gutters justify-content-end">
+          <button type="submit" class="btn">Register</button>
+        </div>
+         </mat-card-content>
+      </form>
+
+  </mat-card>
+
+
+</div>
