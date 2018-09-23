@@ -65,21 +65,18 @@ export class RegisterComponent implements OnInit {
     return new Promise((resolve, reject) => {
       this.http.existId(control.value)
       .subscribe(data => {
-          //console.log(this.form);
-          resolve(null);
+             resolve(null);
         }, err => { resolve({ exists: err.error.mensaje }) });
     });
   }
 
   validatebirthdate(control: FormControl): Promise<any> {
-    //console.log(control);
-    return new Promise((resolve, reject) =>{
+       return new Promise((resolve, reject) =>{
       this.http.validatebirthday(control.value)
       .subscribe(data =>{
         resolve(null);
       }, err => {
-        //console.error(err);
-        resolve({ mayor: err.error.mensaje })
+       resolve({ mayor: err.error.mensaje })
       });
     })
   }
